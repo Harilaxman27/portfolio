@@ -1,12 +1,23 @@
-import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { ThemeToggle } from './ThemeToggle';
-import { ChevronDown } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { Menu } from 'lucide-react';
 
 export const Navbar = () => {
   const location = useLocation();
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  
+  const [isMobile, setIsMobile] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const checkWidth = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkWidth();
+    window.addEventListener('resize', checkWidth);
+    return () => window.removeEventListener('resize', checkWidth);
+  }, []);
+
   const links = [
     { name: 'About', path: '/' },
     { name: 'Resume', path: '/resume' },
@@ -15,41 +26,35 @@ export const Navbar = () => {
     { name: 'Contact', path: '/contact' },
   ];
 
+  if (isMobile) {
+    return (
+      <>
+        <nav className="fixed bottom-0 left-0 right-0 bg-gray-900 z-50 p-2">
+          <div className="flex justify-around">
+            {links.map((link) => (
+              <Link
+                key={link.path}
+                to={link.path}
+                className={`text-xs px-2 py-1 font-medium transition-colors ${
+                  location.pathname === link.path
+                    ? 'text-yellow-500'
+                    : 'text-gray-300 hover:text-yellow-500'
+                }`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {link.name}
+              </Link>
+            ))}
+          </div>
+        </nav>
+      </>
+    );
+  }
+
   return (
-    <nav className="fixed top-0 right-0 w-full lg:w-[calc(100%-280px)] bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm z-40 px-4 md:px-6 py-4">
+    <nav className="fixed top-0 right-0 w-[calc(100%-280px)] bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm z-50 px-6 py-4">
       <div className="flex items-center justify-between">
-        {/* Mobile navigation dropdown */}
-        <div className="relative lg:hidden">
-          <button 
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="flex items-center gap-2 text-sm font-medium text-gray-600 dark:text-gray-300"
-          >
-            {links.find(link => link.path === location.pathname)?.name || 'Menu'}
-            <ChevronDown size={16} className={`transition-transform ${mobileMenuOpen ? 'rotate-180' : ''}`} />
-          </button>
-          
-          {mobileMenuOpen && (
-            <div className="absolute top-full left-0 mt-2 w-40 rounded-md shadow-lg bg-white dark:bg-gray-800 py-2 z-50">
-              {links.map((link) => (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  className={`block px-4 py-2 text-sm ${
-                    location.pathname === link.path
-                      ? 'text-yellow-500'
-                      : 'text-gray-600 dark:text-gray-300 hover:text-yellow-500 dark:hover:text-yellow-500'
-                  }`}
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {link.name}
-                </Link>
-              ))}
-            </div>
-          )}
-        </div>
-        
-        {/* Desktop navigation */}
-        <div className="hidden lg:flex gap-8">
+        <div className="flex gap-8">
           {links.map((link) => (
             <Link
               key={link.path}
@@ -64,7 +69,6 @@ export const Navbar = () => {
             </Link>
           ))}
         </div>
-        
         <ThemeToggle />
       </div>
     </nav>
