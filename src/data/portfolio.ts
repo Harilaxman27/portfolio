@@ -16,6 +16,7 @@ export const sections = [
   { id: "about", label: "About" },
   { id: "resume", label: "Resume" },
   { id: "gallery", label: "Gallery" },
+  { id: "achievements", label: "Achievements" },
   { id: "blog", label: "Blog" },
   { id: "contact", label: "Contact" },
 ] as const;
