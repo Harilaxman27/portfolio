@@ -60,10 +60,11 @@ export function Resume() {
 
       <div className="mt-10 flex justify-end">
         <a
-          href="#"
-          className="inline-flex items-center gap-2 rounded-xl bg-primary text-primary-foreground px-5 py-2.5 text-sm font-semibold transition-transform hover:scale-[1.02]"
+          href="/resume.pdf"
+          download="Aakash-Rajbanshi-Resume.pdf"
+          className="inline-flex items-center gap-2 rounded-xl bg-primary text-primary-foreground px-5 py-2.5 text-sm font-semibold transition-transform hover:scale-[1.03]"
         >
-          <FileDown className="size-4" /> Download CV
+          <FileDown className="size-4" /> Download Resume
         </a>
       </div>
     </section>
