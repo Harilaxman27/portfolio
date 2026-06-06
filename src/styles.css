@@ -36,27 +36,27 @@
 
 :root {
   --radius: 1.25rem;
-  /* Premium AI founder palette — cream surface with deep navy cards */
-  --background: #F5F2EC;
-  --foreground: #11213F;
-  --card: #11213F;
-  --card-2: #183252;
-  --card-foreground: #FAF8F4;
-  --popover: #FAF8F4;
-  --popover-foreground: #11213F;
-  --primary: #DDF4F7;
-  --primary-foreground: #11213F;
-  --secondary: rgba(255, 255, 255, 0.08);
-  --secondary-foreground: #FAF8F4;
-  --muted: rgba(255, 255, 255, 0.06);
-  --muted-foreground: #94a3b8;
-  --accent: #DDF4F7;
-  --accent-foreground: #11213F;
+  /* Light premium founder palette */
+  --background: #F7F4EE;
+  --foreground: #14213D;
+  --card: #FCFBF8;
+  --card-2: #FCFBF8;
+  --card-foreground: #14213D;
+  --popover: #FCFBF8;
+  --popover-foreground: #14213D;
+  --primary: #14213D;
+  --primary-foreground: #FCFBF8;
+  --secondary: #F1ECE2;
+  --secondary-foreground: #14213D;
+  --muted: #F1ECE2;
+  --muted-foreground: #4B5563;
+  --accent: #DDF3F5;
+  --accent-foreground: #14213D;
   --destructive: oklch(0.6 0.22 27);
   --destructive-foreground: #ffffff;
-  --border: rgba(255, 255, 255, 0.08);
-  --input: rgba(255, 255, 255, 0.10);
-  --ring: rgba(17, 33, 63, 0.35);
+  --border: #E8E3DB;
+  --input: #E8E3DB;
+  --ring: rgba(20, 33, 61, 0.30);
 }
 
 @layer base {
