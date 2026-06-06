@@ -36,7 +36,7 @@ export function About() {
           const Icon = icons[it.icon];
           return (
             <div key={it.title} className="card-surface p-5 sm:p-6 flex gap-4">
-              <span className="grid place-items-center size-12 shrink-0 rounded-xl bg-secondary text-primary">
+              <span className="grid place-items-center size-12 shrink-0 rounded-xl bg-primary text-primary-foreground">
                 <Icon className="size-6" />
               </span>
               <div>

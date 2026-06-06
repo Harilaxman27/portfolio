@@ -24,7 +24,7 @@ export function Achievements() {
             className="card-surface group relative block p-5 sm:p-6 transition-colors hover:border-primary/60"
           >
             <div className="flex items-start gap-4">
-              <span className="grid place-items-center size-11 shrink-0 rounded-xl bg-secondary text-primary">
+              <span className="grid place-items-center size-11 shrink-0 rounded-xl bg-primary text-primary-foreground">
                 <BadgeCheck className="size-5" />
               </span>
               <div className="min-w-0 flex-1">

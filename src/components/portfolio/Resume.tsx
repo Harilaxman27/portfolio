@@ -6,7 +6,7 @@ function Block({ icon: Icon, title, children }: { icon: typeof BookOpen; title: 
   return (
     <div className="mt-10 first:mt-0">
       <div className="flex items-center gap-4">
-        <span className="grid place-items-center size-12 rounded-xl bg-secondary text-primary">
+        <span className="grid place-items-center size-12 rounded-xl bg-primary text-primary-foreground">
           <Icon className="size-5" />
         </span>
         <h3 className="text-2xl font-bold">{title}</h3>
@@ -62,7 +62,8 @@ export function Resume() {
         <a
           href="/resume.pdf"
           download="Aakash-Rajbanshi-Resume.pdf"
-          className="inline-flex items-center gap-2 rounded-xl bg-primary text-primary-foreground px-5 py-2.5 text-sm font-semibold transition-transform hover:scale-[1.03]"
+          data-cursor="DOWNLOAD"
+          className="btn-accent inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold transition-transform hover:scale-[1.03]"
         >
           <FileDown className="size-4" /> Download Resume
         </a>
