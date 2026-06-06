@@ -31,10 +31,10 @@ export function Contact() {
         }}
         className="mt-6 grid gap-4 sm:grid-cols-2"
       >
-        <input required placeholder="Full name" className="rounded-xl bg-secondary/60 border border-border px-4 py-3.5 text-sm placeholder:text-muted-foreground focus:outline-none focus:border-primary/60" />
-        <input required type="email" placeholder="Email address" className="rounded-xl bg-secondary/60 border border-border px-4 py-3.5 text-sm placeholder:text-muted-foreground focus:outline-none focus:border-primary/60" />
-        <input required placeholder="Subject" className="sm:col-span-2 rounded-xl bg-secondary/60 border border-border px-4 py-3.5 text-sm placeholder:text-muted-foreground focus:outline-none focus:border-primary/60" />
-        <textarea required placeholder="Your Message" rows={6} className="sm:col-span-2 rounded-xl bg-secondary/60 border border-border px-4 py-3.5 text-sm placeholder:text-muted-foreground focus:outline-none focus:border-primary/60 resize-y" />
+        <input required placeholder="Full name" className="rounded-xl bg-popover text-popover-foreground border border-white/15 px-4 py-3.5 text-sm placeholder:text-muted-foreground focus:outline-none focus:border-primary/80" />
+        <input required type="email" placeholder="Email address" className="rounded-xl bg-popover text-popover-foreground border border-white/15 px-4 py-3.5 text-sm placeholder:text-muted-foreground focus:outline-none focus:border-primary/80" />
+        <input required placeholder="Subject" className="sm:col-span-2 rounded-xl bg-popover text-popover-foreground border border-white/15 px-4 py-3.5 text-sm placeholder:text-muted-foreground focus:outline-none focus:border-primary/80" />
+        <textarea required placeholder="Your Message" rows={6} className="sm:col-span-2 rounded-xl bg-popover text-popover-foreground border border-white/15 px-4 py-3.5 text-sm placeholder:text-muted-foreground focus:outline-none focus:border-primary/80 resize-y" />
         <div className="sm:col-span-2 flex justify-end items-center gap-4">
           {sent && <span className="text-sm text-primary">Thanks — message sent!</span>}
           <button type="submit" className="btn-accent inline-flex items-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold transition-transform hover:scale-[1.02]">
