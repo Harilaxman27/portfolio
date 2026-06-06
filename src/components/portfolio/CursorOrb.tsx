@@ -56,11 +56,12 @@ export function CursorOrb() {
           height: label ? 30 : 20,
         }}
         transition={{ type: "spring", stiffness: 280, damping: 26 }}
-        className="flex items-center justify-center rounded-full border border-white/40 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#11213F] backdrop-blur-md"
+        className="flex items-center justify-center rounded-full border border-white/60 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#14213D] backdrop-blur-md"
         style={{
           background:
-            "linear-gradient(135deg, rgba(221,244,247,0.78) 0%, rgba(233,240,247,0.78) 50%, rgba(246,232,223,0.78) 100%)",
-          boxShadow: "0 6px 20px -6px rgba(17,33,63,0.30)",
+            "linear-gradient(135deg, rgba(221,243,245,0.85) 0%, rgba(234,240,245,0.85) 50%, rgba(246,233,223,0.85) 100%)",
+          boxShadow:
+            "0 0 18px rgba(221,243,245,0.55), 0 6px 22px -6px rgba(17,40,74,0.25)",
         }}
       >
         {label}
