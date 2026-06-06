@@ -6,7 +6,7 @@ import { profile } from "@/data/portfolio";
 export function Sidebar() {
   const [open, setOpen] = useState(false);
   return (
-    <aside className="card-surface p-6 lg:p-8 lg:sticky lg:top-6 lg:max-h-[calc(100vh-3rem)] lg:overflow-hidden no-scrollbar">
+    <aside className="dark-surface p-6 lg:p-8 lg:sticky lg:top-6 lg:max-h-[calc(100vh-3rem)] lg:overflow-hidden no-scrollbar">
       <div className="flex flex-col items-center text-center lg:text-left lg:items-start">
         <div className="size-32 lg:size-40 rounded-3xl overflow-hidden bg-secondary ring-1 ring-border">
           <img src={profileImg} alt={profile.name} width={512} height={512} className="size-full object-cover" />
