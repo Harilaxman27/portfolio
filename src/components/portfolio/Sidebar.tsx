@@ -30,7 +30,7 @@ export function Sidebar() {
         <div className="my-6 h-px bg-border" />
         <ul className="space-y-4">
           <li className="flex items-center gap-3">
-            <span className="grid place-items-center size-10 rounded-xl bg-secondary text-primary">
+            <span className="grid place-items-center size-10 rounded-xl bg-primary text-primary-foreground">
               <Mail className="size-4" />
             </span>
             <div className="min-w-0">
@@ -41,7 +41,7 @@ export function Sidebar() {
             </div>
           </li>
           <li className="flex items-center gap-3">
-            <span className="grid place-items-center size-10 rounded-xl bg-secondary text-primary">
+            <span className="grid place-items-center size-10 rounded-xl bg-primary text-primary-foreground">
               <MapPin className="size-4" />
             </span>
             <div>
