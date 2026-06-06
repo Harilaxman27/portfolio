@@ -44,7 +44,7 @@ export function TopNav() {
             <button
               onClick={() => handleClick(s.id)}
               className={`text-sm font-medium transition-colors ${
-                active === s.id ? "text-primary" : "text-muted-foreground hover:text-foreground"
+                active === s.id ? "text-primary" : "text-muted-foreground hover:text-card-foreground"
               }`}
             >
               {s.label}
@@ -60,7 +60,7 @@ export function TopNav() {
               <button
                 onClick={() => handleClick(s.id)}
                 className={`block w-full text-left px-5 py-2.5 text-sm transition-colors ${
-                  active === s.id ? "text-primary" : "text-foreground/90 hover:bg-secondary"
+                  active === s.id ? "text-primary" : "text-card-foreground hover:bg-white/10"
                 }`}
               >
                 {s.label}
