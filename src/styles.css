@@ -44,11 +44,11 @@
   --card-foreground: #FAF8F4;
   --popover: #FAF8F4;
   --popover-foreground: #11213F;
-  --primary: #11213F;
-  --primary-foreground: #FAF8F4;
-  --secondary: #1f3b62;
+  --primary: #DDF4F7;
+  --primary-foreground: #11213F;
+  --secondary: rgba(255, 255, 255, 0.08);
   --secondary-foreground: #FAF8F4;
-  --muted: #1f3b62;
+  --muted: rgba(255, 255, 255, 0.06);
   --muted-foreground: #94a3b8;
   --accent: #DDF4F7;
   --accent-foreground: #11213F;
