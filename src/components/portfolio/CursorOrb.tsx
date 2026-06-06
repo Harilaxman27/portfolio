@@ -51,9 +51,17 @@ export function CursorOrb() {
       className="pointer-events-none fixed left-0 top-0 z-[100] -translate-x-1/2 -translate-y-1/2 transition-opacity duration-200"
     >
       <motion.div
-        animate={{ width: label ? 56 : 10, height: label ? 28 : 10 }}
-        transition={{ type: "spring", stiffness: 300, damping: 25 }}
-        className="flex items-center justify-center rounded-full border border-white/30 bg-gradient-to-br from-zinc-200 to-zinc-400/90 text-[10px] font-semibold uppercase tracking-widest text-zinc-900 shadow-[0_2px_10px_rgba(0,0,0,0.25)]"
+        animate={{
+          width: label ? 78 : 20,
+          height: label ? 30 : 20,
+        }}
+        transition={{ type: "spring", stiffness: 280, damping: 26 }}
+        className="flex items-center justify-center rounded-full border border-white/40 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#11213F] backdrop-blur-md"
+        style={{
+          background:
+            "linear-gradient(135deg, rgba(221,244,247,0.78) 0%, rgba(233,240,247,0.78) 50%, rgba(246,232,223,0.78) 100%)",
+          boxShadow: "0 6px 20px -6px rgba(17,33,63,0.30)",
+        }}
       >
         {label}
       </motion.div>
