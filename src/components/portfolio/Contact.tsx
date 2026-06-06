@@ -37,7 +37,7 @@ export function Contact() {
         <textarea required placeholder="Your Message" rows={6} className="sm:col-span-2 rounded-xl bg-secondary/60 border border-border px-4 py-3.5 text-sm placeholder:text-muted-foreground focus:outline-none focus:border-primary/60 resize-y" />
         <div className="sm:col-span-2 flex justify-end items-center gap-4">
           {sent && <span className="text-sm text-primary">Thanks — message sent!</span>}
-          <button type="submit" className="inline-flex items-center gap-2 rounded-xl bg-primary text-primary-foreground px-5 py-3 text-sm font-semibold transition-transform hover:scale-[1.02]">
+          <button type="submit" className="btn-accent inline-flex items-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold transition-transform hover:scale-[1.02]">
             <Send className="size-4" /> Send Message
           </button>
         </div>
