@@ -1,6 +1,6 @@
 export const profile = {
   name: "Aakash Rajbanshi",
-  title: "Software Developer",
+  title: "AI Engineer & Full Stack Developer",
   email: "aakashrajbanshi58@gmail.com",
   location: "Kathmandu, Nepal",
   socials: {
