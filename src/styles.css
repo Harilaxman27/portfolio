@@ -36,47 +36,63 @@
 
 :root {
   --radius: 1.25rem;
-  /* Dark portfolio palette — charcoal + amber */
-  --background: oklch(0.16 0.005 60);
-  --foreground: oklch(0.95 0.01 80);
-  --card: oklch(0.205 0.006 60);
-  --card-2: oklch(0.22 0.008 60);
-  --card-foreground: oklch(0.95 0.01 80);
-  --popover: oklch(0.205 0.006 60);
-  --popover-foreground: oklch(0.95 0.01 80);
-  --primary: oklch(0.83 0.14 80);            /* amber/gold */
-  --primary-foreground: oklch(0.18 0.005 60);
-  --secondary: oklch(0.25 0.006 60);
-  --secondary-foreground: oklch(0.95 0.01 80);
-  --muted: oklch(0.25 0.006 60);
-  --muted-foreground: oklch(0.7 0.01 80);
-  --accent: oklch(0.83 0.14 80);
-  --accent-foreground: oklch(0.18 0.005 60);
+  /* Premium AI founder palette — cream surface with deep navy cards */
+  --background: #F5F2EC;
+  --foreground: #11213F;
+  --card: #11213F;
+  --card-2: #183252;
+  --card-foreground: #FAF8F4;
+  --popover: #FAF8F4;
+  --popover-foreground: #11213F;
+  --primary: #11213F;
+  --primary-foreground: #FAF8F4;
+  --secondary: #1f3b62;
+  --secondary-foreground: #FAF8F4;
+  --muted: #1f3b62;
+  --muted-foreground: #94a3b8;
+  --accent: #DDF4F7;
+  --accent-foreground: #11213F;
   --destructive: oklch(0.6 0.22 27);
-  --destructive-foreground: oklch(0.98 0 0);
-  --border: oklch(1 0 0 / 8%);
-  --input: oklch(1 0 0 / 10%);
-  --ring: oklch(0.83 0.14 80 / 60%);
+  --destructive-foreground: #ffffff;
+  --border: rgba(255, 255, 255, 0.08);
+  --input: rgba(255, 255, 255, 0.10);
+  --ring: rgba(17, 33, 63, 0.35);
 }
 
 @layer base {
   * { border-color: var(--color-border); }
-  html { scroll-behavior: smooth; }
+  html, body { scroll-behavior: smooth; }
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
     background-image:
-      radial-gradient(1200px 600px at 80% -10%, oklch(0.83 0.14 80 / 0.06), transparent 60%),
-      radial-gradient(900px 500px at -10% 110%, oklch(0.83 0.14 80 / 0.04), transparent 60%);
+      radial-gradient(1200px 600px at 80% -10%, rgba(221, 244, 247, 0.55), transparent 60%),
+      radial-gradient(900px 500px at -10% 110%, rgba(246, 232, 223, 0.5), transparent 60%);
     background-attachment: fixed;
   }
 }
 
 @utility card-surface {
   background: linear-gradient(180deg, var(--color-card) 0%, var(--color-card-2) 100%);
-  border: 1px solid var(--color-border);
+  border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: var(--radius-2xl);
-  box-shadow: 0 20px 60px -30px rgba(0, 0, 0, 0.6);
+  color: var(--color-card-foreground);
+  box-shadow: 0 24px 60px -32px rgba(17, 33, 63, 0.35);
+}
+
+@utility surface-light {
+  background: var(--popover);
+  color: var(--popover-foreground);
+  border: 1px solid rgba(17, 33, 63, 0.08);
+  border-radius: var(--radius-2xl);
+  box-shadow: 0 24px 60px -32px rgba(17, 33, 63, 0.18);
+}
+
+@utility btn-accent {
+  background: linear-gradient(135deg, #DDF4F7 0%, #E9F0F7 50%, #F6E8DF 100%);
+  color: var(--color-primary);
+  border: 1px solid rgba(17, 33, 63, 0.12);
+  box-shadow: 0 10px 30px -14px rgba(17, 33, 63, 0.45);
 }
 
 @utility section-title {
@@ -92,9 +108,16 @@
   width: 3rem;
   height: 4px;
   margin-top: 0.5rem;
-  background: var(--color-primary);
+  background: linear-gradient(90deg, #DDF4F7, #F6E8DF);
   border-radius: 999px;
 }
+
+/* Hide scrollbar (sidebar) */
+@utility no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.no-scrollbar::-webkit-scrollbar { display: none; }
 
 /* Infinite marquee for skills */
 @keyframes marquee-left {
