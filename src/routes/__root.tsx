@@ -85,11 +85,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:description", content: "Portfolio of Salendra Harilaxman, a Full Stack Developer & AI Engineer based in Hyderabad." },
       { name: "twitter:image", content: "/og-image.jpeg" },
     ],
-    links: [
+      links: [
       {
         rel: "icon",
         type: "image/png",
-        href: "/src/assets/ChatGPT%20Image%20Jun%206,%202026,%2011_27_34%20PM.png",
+        // Use a public-root favicon so Vercel serves it correctly
+        href: "/favicon.png",
       },
       {
         rel: "stylesheet",
