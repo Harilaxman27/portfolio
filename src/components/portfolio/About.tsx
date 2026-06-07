@@ -1,32 +1,31 @@
-import { Smartphone, Code2, PenTool, Server } from "lucide-react";
+import { Smartphone, Code2, Brain, Server } from "lucide-react";
 import { SectionHeader } from "./SectionHeader";
 import { Skills } from "./Skills";
 
-const icons = { smartphone: Smartphone, code: Code2, "pen-tool": PenTool, server: Server } as const;
+const icons = { smartphone: Smartphone, code: Code2, brain: Brain, server: Server } as const;
 
 const items = [
-  { icon: "smartphone", title: "Mobile Apps", desc: "Professional development of applications for Android and iOS." },
-  { icon: "code", title: "Web Development", desc: "High-quality development of sites at the professional level." },
-  { icon: "pen-tool", title: "UI/UX Design", desc: "The most modern and high-quality design made at a professional level." },
-  { icon: "server", title: "Backend Development", desc: "High-performance backend services designed for scalability and seamless user experience." },
+  { icon: "brain", title: "AI & Machine Learning", desc: "Building intelligent systems with supervised learning, deep learning, and computer vision for real-world problem solving." },
+  { icon: "code", title: "Full Stack Development", desc: "End-to-end web applications using React.js, FastAPI, Firebase, and Supabase with clean architecture." },
+  { icon: "smartphone", title: "Mobile Apps", desc: "Cross-platform mobile applications with Flutter and Dart, integrated with cloud backends and AI services." },
+  { icon: "server", title: "Backend & DevOps", desc: "Scalable APIs with FastAPI & REST, containerised with Docker, and automated via GitHub Actions CI/CD pipelines." },
 ] as const;
 
 export function About() {
   return (
-    <section id="about" className="card-surface p-6 sm:p-8 lg:p-10 scroll-mt-24">
+    <section id="about" className="card-about p-6 sm:p-8 lg:p-10 scroll-mt-24">
       <SectionHeader title="About Me" />
       <div className="space-y-4 text-muted-foreground leading-relaxed">
         <p>
-          A passionate Flutter developer with strong expertise in cross-platform apps, REST APIs,
-          UI/UX, widgets, and state management solutions. Proven track record in delivering
-          cutting-edge solutions, including API integration, third-party libraries, and performance
-          optimization. Adept at debugging to ensure high-quality, responsive apps and an agile
-          collaborator committed to staying current with industry trends.
+          Machine Learning Enthusiast and Full Stack Developer with a strong foundation in supervised
+          learning techniques, including regression and classification. Experienced in Python,
+          React.js, FastAPI, TensorFlow, and real-world data problem-solving.
         </p>
         <p>
-          If you're seeking a skilled Flutter developer to breathe life into your project and exceed
-          your expectations, I am here to collaborate and create magic together. Reach out, and
-          let's transform your vision into a reality!
+          Skilled at developing AI-driven solutions and building mobile apps with Flutter. Passionate
+          about applying machine learning to real-world challenges, with hands-on experience in crop
+          disease detection, recommendation systems, and sustainable farming projects. Always eager
+          to learn and grow in the field of AI and machine learning.
         </p>
       </div>
 
@@ -35,7 +34,7 @@ export function About() {
         {items.map((it) => {
           const Icon = icons[it.icon];
           return (
-            <div key={it.title} className="card-surface p-5 sm:p-6 flex gap-4">
+            <div key={it.title} className="card-about p-5 sm:p-6 flex gap-4">
               <span className="grid place-items-center size-12 shrink-0 rounded-xl bg-primary text-primary-foreground">
                 <Icon className="size-6" />
               </span>

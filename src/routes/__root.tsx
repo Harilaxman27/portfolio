@@ -10,7 +10,6 @@ import {
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
-import { reportLovableError } from "../lib/lovable-error-reporting";
 
 function NotFoundComponent() {
   return (
@@ -37,9 +36,6 @@ function NotFoundComponent() {
 function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   console.error(error);
   const router = useRouter();
-  useEffect(() => {
-    reportLovableError(error, { boundary: "tanstack_root_error_component" });
-  }, [error]);
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
@@ -77,16 +73,24 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Salendra Harilaxman | Portfolio" },
+      { name: "description", content: "Portfolio of Salendra Harilaxman, a Full Stack Developer & AI Engineer based in Hyderabad." },
+      { name: "author", content: "Salendra Harilaxman" },
+      { property: "og:title", content: "Salendra Harilaxman | Portfolio" },
+      { property: "og:description", content: "Portfolio of Salendra Harilaxman, a Full Stack Developer & AI Engineer based in Hyderabad." },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
+      { property: "og:image", content: "/og-image.jpeg" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Salendra Harilaxman | Portfolio" },
+      { name: "twitter:description", content: "Portfolio of Salendra Harilaxman, a Full Stack Developer & AI Engineer based in Hyderabad." },
+      { name: "twitter:image", content: "/og-image.jpeg" },
     ],
     links: [
+      {
+        rel: "icon",
+        type: "image/png",
+        href: "/src/assets/ChatGPT%20Image%20Jun%206,%202026,%2011_27_34%20PM.png",
+      },
       {
         rel: "stylesheet",
         href: appCss,

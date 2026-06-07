@@ -12,8 +12,7 @@ export function Skills() {
           {loop.map((s, i) => (
             <div
               key={`${s.slug}-${i}`}
-              title={s.name}
-              className="group shrink-0 grid place-items-center size-28 rounded-2xl bg-card border border-border transition-transform duration-300 ease-out hover:scale-110 hover:border-primary/60"
+              className="group relative shrink-0 grid place-items-center size-28 rounded-2xl bg-card border border-border transition-transform duration-300 ease-out hover:scale-110 hover:border-primary/60"
             >
               <img
                 src={`https://cdn.simpleicons.org/${s.slug}`}
@@ -21,8 +20,11 @@ export function Skills() {
                 width={56}
                 height={56}
                 loading="lazy"
-                className="size-14 transition-transform duration-300 group-hover:scale-110"
+                className="size-12 transition-transform duration-300 group-hover:-translate-y-2"
               />
+              <span className="absolute bottom-3 text-[11px] font-semibold tracking-wide text-primary opacity-0 transition-all duration-300 translate-y-2 group-hover:translate-y-0 group-hover:opacity-100">
+                {s.name}
+              </span>
             </div>
           ))}
         </div>

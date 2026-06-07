@@ -6,7 +6,7 @@ import { achievements } from "@/data/achievements";
 
 export function Achievements() {
   return (
-    <section id="achievements" className="card-surface p-6 sm:p-8 lg:p-10 mt-6 scroll-mt-24">
+    <section id="achievements" className="card-achievements p-6 sm:p-8 lg:p-10 mt-6 scroll-mt-24">
       <SectionHeader title="Achievements" />
       <div className="grid gap-5 sm:grid-cols-2">
         {achievements.map((a, i) => (
@@ -21,7 +21,7 @@ export function Achievements() {
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.45, delay: i * 0.05, ease: "easeOut" }}
             whileHover={{ y: -4 }}
-            className="card-surface group relative block p-5 sm:p-6 transition-colors hover:border-primary/60"
+            className="card-achievements group relative block p-5 sm:p-6 transition-colors hover:border-primary/60"
           >
             <div className="flex items-start gap-4">
               <span className="grid place-items-center size-11 shrink-0 rounded-xl bg-primary text-primary-foreground">
@@ -40,7 +40,7 @@ export function Achievements() {
                 </div>
               </div>
               <span className="inline-flex items-center gap-1 text-xs font-semibold text-primary">
-                Verified
+                Verify
                 <ArrowUpRight className="size-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </span>
             </div>

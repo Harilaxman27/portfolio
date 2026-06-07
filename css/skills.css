@@ -1,0 +1,83 @@
+/* ============================================
+   Skills — Infinite Marquee
+   ============================================ */
+
+.skills-section {
+  margin-bottom: var(--space-3xl);
+}
+
+.skills-marquee-wrapper {
+  overflow: hidden;
+  padding: var(--space-xl) 0;
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+
+.skills-marquee {
+  display: flex;
+  gap: var(--space-2xl);
+  width: max-content;
+  animation: marquee-scroll 30s linear infinite;
+}
+
+.skills-marquee:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.skill-icon-card {
+  width: 72px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-lg);
+  background: var(--surface-hover);
+  border: 1px solid var(--border);
+  flex-shrink: 0;
+  transition: all var(--duration-normal) var(--ease-out);
+  cursor: default;
+  position: relative;
+}
+
+.skill-icon-card img,
+.skill-icon-card svg {
+  width: 36px;
+  height: 36px;
+  filter: grayscale(100%) brightness(0.7);
+  transition: all var(--duration-normal) var(--ease-out);
+}
+
+.skill-icon-card:hover {
+  transform: scale(1.3);
+  border-color: var(--accent);
+  box-shadow: var(--shadow-lg);
+  z-index: 10;
+}
+
+.skill-icon-card:hover img,
+.skill-icon-card:hover svg {
+  filter: grayscale(0%) brightness(1);
+}
+
+.skill-icon-label {
+  position: absolute;
+  bottom: -22px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--text-tertiary);
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity var(--duration-normal) var(--ease-out);
+}
+
+.skill-icon-card:hover .skill-icon-label {
+  opacity: 1;
+  color: var(--accent);
+}

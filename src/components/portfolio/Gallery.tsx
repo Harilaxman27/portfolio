@@ -42,7 +42,7 @@ export function Gallery() {
   }, []);
 
   return (
-    <section id="gallery" className="card-surface p-6 sm:p-8 lg:p-10 mt-6 scroll-mt-24">
+    <section id="gallery" className="card-gallery p-6 sm:p-8 lg:p-10 mt-6 scroll-mt-24">
       <SectionHeader title="Gallery" />
       {items.length === 0 ? (
         <p className="text-muted-foreground text-sm">
@@ -60,7 +60,7 @@ export function Gallery() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.45, delay: i * 0.04, ease: "easeOut" }}
-              className="group card-surface relative overflow-hidden aspect-[4/3] text-left"
+              className="group card-gallery relative overflow-hidden aspect-[4/3] text-left"
             >
               <img
                 src={img.src}
@@ -100,7 +100,7 @@ export function Gallery() {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.97 }}
               transition={{ type: "spring", stiffness: 240, damping: 26 }}
-              className="card-surface relative w-full max-w-4xl overflow-hidden"
+              className="card-gallery relative w-full max-w-4xl overflow-hidden"
             >
               <button
                 onClick={() => setActive(null)}

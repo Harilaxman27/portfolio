@@ -24,7 +24,7 @@ function Dot() {
 
 export function Resume() {
   return (
-    <section id="resume" className="card-surface p-6 sm:p-8 lg:p-10 mt-6 scroll-mt-24">
+    <section id="resume" className="card-resume p-6 sm:p-8 lg:p-10 mt-6 scroll-mt-24">
       <SectionHeader title="Resume" />
 
       <Block icon={BookOpen} title="Education">
@@ -61,7 +61,7 @@ export function Resume() {
       <div className="mt-10 flex justify-end">
         <a
           href="/resume.pdf"
-          download="Aakash-Rajbanshi-Resume.pdf"
+          download="Salendra-Harilaxman-Resume.pdf"
           data-cursor="DOWNLOAD"
           className="btn-accent inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold transition-transform hover:scale-[1.03]"
         >

@@ -5,7 +5,8 @@ import { motion, useMotionValue, useSpring } from "framer-motion";
 /**
  * Subtle platinum cursor companion.
  * - Follows the cursor with a soft spring delay.
- * - Reads `data-cursor="VIEW" | "VERIFY"` on hovered elements to show a small label.
+ * - Reads `data-cursor` on hovered elements.
+ * - Auto-detects buttons and nav elements for 'OPEN' or expand behavior.
  * - Hidden on touch devices and when the cursor leaves the window.
  */
 export function CursorOrb() {
@@ -15,6 +16,7 @@ export function CursorOrb() {
   const sy = useSpring(y, { stiffness: 220, damping: 28, mass: 0.4 });
 
   const [label, setLabel] = useState<string | null>(null);
+  const [isExpanded, setIsExpanded] = useState(false);
   const [visible, setVisible] = useState(false);
   const [enabled, setEnabled] = useState(true);
 
@@ -29,9 +31,32 @@ export function CursorOrb() {
       x.set(e.clientX);
       y.set(e.clientY);
       setVisible(true);
-      const el = (e.target as HTMLElement)?.closest("[data-cursor]") as HTMLElement | null;
-      setLabel(el?.dataset.cursor ?? null);
+
+      const target = e.target as HTMLElement;
+      const explicitEl = target.closest("[data-cursor]") as HTMLElement | null;
+
+      let newLabel = explicitEl?.dataset.cursor ?? null;
+      let expand = false;
+
+      if (!newLabel) {
+        if (target.closest("button") || target.closest("a")) {
+          if (target.closest("nav")) {
+            expand = true;
+          } else {
+            newLabel = "OPEN";
+          }
+        } else if (target.closest("nav")) {
+          expand = true;
+        }
+      } else if (newLabel === "EXPAND") {
+        expand = true;
+        newLabel = null;
+      }
+
+      setLabel(newLabel);
+      setIsExpanded(expand);
     };
+
     const leave = () => setVisible(false);
 
     window.addEventListener("mousemove", move);
@@ -52,16 +77,16 @@ export function CursorOrb() {
     >
       <motion.div
         animate={{
-          width: label ? 78 : 20,
-          height: label ? 30 : 20,
+          width: label ? 78 : isExpanded ? 40 : 22,
+          height: label ? 30 : isExpanded ? 40 : 22,
         }}
         transition={{ type: "spring", stiffness: 280, damping: 26 }}
-        className="flex items-center justify-center rounded-full border border-white/60 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#14213D] backdrop-blur-md"
+        className="flex items-center justify-center rounded-full border border-white/40 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#11284A] backdrop-blur-md"
         style={{
           background:
-            "linear-gradient(135deg, rgba(221,243,245,0.85) 0%, rgba(234,240,245,0.85) 50%, rgba(246,233,223,0.85) 100%)",
+            "linear-gradient(135deg, rgba(35,74,125,0.4) 0%, rgba(191,214,220,0.6) 50%, rgba(221,235,237,0.85) 100%)",
           boxShadow:
-            "0 0 18px rgba(221,243,245,0.55), 0 6px 22px -6px rgba(17,40,74,0.25)",
+            "0 0 18px rgba(191,214,220,0.45), 0 6px 22px -6px rgba(17,40,74,0.25)",
         }}
       >
         {label}

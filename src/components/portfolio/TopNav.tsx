@@ -28,7 +28,7 @@ export function TopNav() {
   };
 
   return (
-    <nav className="dark-surface sticky top-0 z-30 mb-6 flex items-center justify-between px-5 py-3 lg:justify-end lg:px-8 lg:py-4">
+    <nav className="dark-surface sticky top-3 md:top-[18px] lg:top-6 z-30 mb-6 flex items-center justify-between px-5 py-3 lg:justify-end lg:px-8 lg:py-4">
       <span className="text-sm font-semibold text-white lg:hidden">Menu</span>
       <button
         onClick={() => setOpen((v) => !v)}

@@ -3,6 +3,7 @@ import { Sidebar } from "@/components/portfolio/Sidebar";
 import { TopNav } from "@/components/portfolio/TopNav";
 import { About } from "@/components/portfolio/About";
 import { Resume } from "@/components/portfolio/Resume";
+import { Projects } from "@/components/portfolio/Projects";
 import { Gallery } from "@/components/portfolio/Gallery";
 import { Achievements } from "@/components/portfolio/Achievements";
 import { Blog } from "@/components/portfolio/Blog";
@@ -12,10 +13,10 @@ import { CursorOrb } from "@/components/portfolio/CursorOrb";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Aakash Rajbanshi — Software Developer" },
-      { name: "description", content: "Portfolio of Aakash Rajbanshi — Flutter & full-stack software developer based in Kathmandu, Nepal." },
-      { property: "og:title", content: "Aakash Rajbanshi — Software Developer" },
-      { property: "og:description", content: "Portfolio of Aakash Rajbanshi — Flutter & full-stack software developer based in Kathmandu, Nepal." },
+      { title: "Salendra Harilaxman — Full Stack Developer & AI Engineer" },
+      { name: "description", content: "Portfolio of Salendra Harilaxman — Full Stack Developer & AI Engineer based in Hyderabad, India." },
+      { property: "og:title", content: "Salendra Harilaxman — Full Stack Developer & AI Engineer" },
+      { property: "og:description", content: "Portfolio of Salendra Harilaxman — Full Stack Developer & AI Engineer based in Hyderabad, India." },
     ],
   }),
   component: PortfolioPage,
@@ -31,6 +32,7 @@ function PortfolioPage() {
           <TopNav />
           <About />
           <Resume />
+          <Projects />
           <Gallery />
           <Achievements />
           <Blog />
