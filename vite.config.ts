@@ -4,5 +4,6 @@ export default defineConfig({
   tanstackStart: {
     server: { entry: "server" },
   },
-  nitro: true,
+  // Ensure Nitro uses the Vercel preset for production builds
+  nitro: process.env.NODE_ENV === "production" ? { preset: "vercel" } : true,
 });
